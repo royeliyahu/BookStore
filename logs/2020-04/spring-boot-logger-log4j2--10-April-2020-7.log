@@ -1,0 +1,5 @@
+2020-04-11 01:07:00,524 WARN c.z.h.p.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6h1s113ms773µs996ns).
+2020-04-11 13:21:18,270 WARN c.z.h.p.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=12h14m4s349ms334µs610ns).
+2020-04-11 13:52:53,289 ERROR c.e.B.T.TopicService [http-nio-8080-exec-8] getting all topics.
+2020-04-11 13:52:53,457 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler [http-nio-8080-exec-8] SQL Warning Code: 10000, SQLState: 01J01
+2020-04-11 13:52:53,458 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler [http-nio-8080-exec-8] Database 'memory:testdb' not created, connection made to existing database instead.

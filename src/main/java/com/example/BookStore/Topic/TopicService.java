@@ -27,7 +27,7 @@ public class TopicService {
         List<Topic> topics = new ArrayList<Topic>();
         topicRepository.findAll().forEach(topics::add);
 
-        logger.error("getting all topics: " + topics);
+        logger.error("getting all topics.");
         return topics;
     }
 

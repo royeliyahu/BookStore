@@ -1,10 +1,13 @@
 package com.example.BookStore.Topic;
 
+import org.springframework.core.serializer.Deserializer;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.io.Serializable;
 
 @Entity
-public class Topic {
+public class Topic implements Serializable {
     @Id
     private String id;
     private String name;
@@ -42,5 +45,14 @@ public class Topic {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    @Override
+    public String toString() {
+        return "Topic{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                '}';
     }
 }
