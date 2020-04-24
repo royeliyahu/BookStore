@@ -1,5 +1,7 @@
 package com.example.BookStore.Topic;
 
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.springframework.core.serializer.Deserializer;
 
 import javax.persistence.Entity;

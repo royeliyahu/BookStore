@@ -41,4 +41,9 @@ public class TopicController {
     public void deleteTopic(@PathVariable String id){
         topicService.deleteTopic(id);
     }
+
+    @RequestMapping(value="/topics/active")
+    public List<Topic> getActiveTopics(){
+        return topicService.getAllActiveTopics();
+    }
 }
