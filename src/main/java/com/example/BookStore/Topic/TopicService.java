@@ -33,7 +33,7 @@ public class TopicService {
 
     public List<Topic> getAllActiveTopics(){
         List<Topic> topics = new ArrayList<Topic>();
-//        topicRepository.findAllActiveTopics().forEach(topics::add);
+        topicRepository.findAllActiveTopics().forEach(topics::add);
 
         logger.error("getting all active topics.");
         return topics;
