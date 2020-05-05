@@ -25,6 +25,10 @@ public class Topic implements Serializable {
     public Topic() {
     }
 
+    public Topic(String id) {
+        this.id = id;
+    }
+
     public String getId() {
         return id;
     }

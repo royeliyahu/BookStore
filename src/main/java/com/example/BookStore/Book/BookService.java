@@ -29,4 +29,23 @@ public class BookService {
         return bookRepository.findById(id).get();
     }
 
+    public List<Book> getBooksByTopic(String topic) {
+        return bookRepository.findByTopicId(topic);
+    }
+
+    public List<Book> getBooksByAuthor(int author){
+        return bookRepository.findByAuthorId(author);
+    }
+
+    public List<Book> getBooksByAuthor(String author){
+        return bookRepository.findByAuthorName(author);
+    }
+
+    public List<Book> getBooksByAuthorAndPublishrt(Integer author, String publisher) {
+        return bookRepository.findByAuthorIdAndPublisher(author, publisher);
+    }
+
+    public List<Book> getBooksByPublishrt(String publisher) {
+        return bookRepository.findByPublisher(publisher);
+    }
 }

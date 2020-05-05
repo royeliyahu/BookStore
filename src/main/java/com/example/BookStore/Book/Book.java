@@ -1,6 +1,7 @@
 package com.example.BookStore.Book;
 
 import com.example.BookStore.Author.Author;
+import com.example.BookStore.Topic.Topic;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -14,17 +15,20 @@ public class Book implements Serializable {
     private int pages;
     @ManyToOne
     private Author author;
+    @ManyToOne
+    private Topic topic;
     private String publisher;
 
     public Book() {
     }
 
-    public Book(String id, String name, int pages, Author author, String publisher) {
+    public Book(String id, String name, int pages, Author author, String publisher, Topic topic) {
         this.id = id;
         this.name = name;
         this.pages = pages;
         this.author = author;
         this.publisher = publisher;
+        this.topic = topic;
     }
 
     public Book(String id, String name, int pages, String publisher) {
@@ -32,6 +36,14 @@ public class Book implements Serializable {
         this.name = name;
         this.pages = pages;
         this.publisher = publisher;
+    }
+
+    public Topic getTopic() {
+        return topic;
+    }
+
+    public void setTopic(Topic topic) {
+        this.topic = topic;
     }
 
     public String getId() {
@@ -72,5 +84,17 @@ public class Book implements Serializable {
 
     public void setPublisher(String publisher) {
         this.publisher = publisher;
+    }
+
+    @Override
+    public String toString() {
+        return "Book {" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", pages=" + pages +
+                ", author=" + author +
+                ", topic=" + topic +
+                ", publisher='" + publisher + '\'' +
+                '}';
     }
 }
