@@ -40,12 +40,15 @@ public class TopicService {
     }
 
     public Topic getTopic(String id){
+        logger.error("getting topic: " + id);
+
 //        return topics.stream().filter(s -> s.getId().equals(id)).findFirst().get();
         return topicRepository.findById(id).get();
     }
 
     public void addTopic(Topic topic){
 //        topics.add(topic);
+        logger.error("adding topic: " + topic.toString());
         topicRepository.save(topic);
     }
 
@@ -57,11 +60,13 @@ public class TopicService {
 //                return;
 //            }
 //        }
+        logger.error("updating topic: " + id);
         topicRepository.save(topic);
     }
 
     public void deleteTopic(String id) {
 //        topics.removeIf(t -> t.getId().equals(id));
+        logger.error("deleating topic: " + id);
         topicRepository.deleteById(id);
     }
 

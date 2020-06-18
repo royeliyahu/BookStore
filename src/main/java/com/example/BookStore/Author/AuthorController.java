@@ -30,9 +30,15 @@ public class AuthorController {
         return authorService.getAuthorsWithBooksNum(count);
     }
 
-//    @RequestMapping("/authors/books/num/{count}")
-//    public List<Book> getBooksNum(@PathVariable int count){
-//        return authorService.getBooksNum(count);
-//    }
+    @RequestMapping("/help")
+    public String getBooksNum(){
+        return "available commands:<br>" +
+                "authors, authors/{id}, &emsp;authors/books/{count}<br>" +
+                "books, books{id}, &emsp;books/topic/{topic},  &emsp;books/publisher/{publisher},  &emsp;books/authorId/{author}," +
+                "books/authorName/{author}, &emsp;books/pages/{min}/{max}, &emsp;<br>books/author/{author}/publisher/{publisher}<br>" +
+                "topics,  &emsp;topics/{id},  &emsp;topics/active" +
+                "topics - post command.  &emsp; topics/{id} - put and delete" +
+                "<br> Topic has: id, name and description";
+    }
 
 }

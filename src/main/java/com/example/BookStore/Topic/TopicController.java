@@ -11,6 +11,12 @@ public class TopicController {
     @Autowired
     private TopicService topicService;
 
+    @RequestMapping("/")
+    public String root(){
+        //log
+        return "Hi there BookStore is online<br> please check help for commands";
+    }
+
     @RequestMapping("/topics")
     public List<Topic> getAllTopics(){
         //log

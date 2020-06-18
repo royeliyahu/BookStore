@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class BookService {
@@ -47,5 +48,14 @@ public class BookService {
 
     public List<Book> getBooksByPublishrt(String publisher) {
         return bookRepository.findByPublisher(publisher);
+    }
+
+    public List<Book> getBooksByPages(Integer min, Integer max) {
+        List<Book> books = new ArrayList<>();
+
+        bookRepository.findAll().forEach(books::add);
+        return books.stream().filter(book -> book.getPages() > min).filter(book -> book.getPages() < max).collect(Collectors.toList());
+
+
     }
 }

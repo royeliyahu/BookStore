@@ -47,4 +47,9 @@ public class BookController {
         return bookService.getBooksByAuthorAndPublishrt(author, publisher);
     }
 
+    @RequestMapping("books/pages/{min}/{max}")
+    public List<Book> getBooksByPages(@PathVariable Integer min, @PathVariable Integer max){
+        return bookService.getBooksByPages(min, max);
+    }
+
 }
